@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  CWRD
+//
+//  Created by lanou on 15/9/16.
+//  Copyright (c) 2015年 lanou. All rights reserved.
+//
+
+#ifndef CWRD_PrefixHeader_pch
+#define CWRD_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UrlHeader.h"
+#import "AppHeader.h"
+#import "KeyHeader.h"
+#import "ImpHeader.h"
+#import <Availability.h>
+
+#endif
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#if __IPHONE_7_0 && __IPHONE_OS_VERSION_MAX_ALLOWED >=  __IPHONE_7_0
+#define IS_RUNNING_IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#else
+#define IS_RUNNING_IOS7 NO
+#endif
